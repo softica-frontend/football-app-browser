@@ -55,7 +55,7 @@ export default function Loading() {
     if (username && token) {
       fetchData();
     }
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     loadImages(imagesToLoad)
