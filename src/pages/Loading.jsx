@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { loadImages } from "../util/front/loadImages";
 import { imagesToLoad } from "../util/front/imagesToLoad";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,7 +25,6 @@ export default function Loading() {
   const username = localStorage.getItem("username");
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
-  const location = useLocation();
 
   const FallbackNavigate = ({ to }) => {
     useEffect(() => {
@@ -35,10 +34,10 @@ export default function Loading() {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      navigate(location.pathname, { replace: true });
+    const interval = setTimeout(() => {
+      window.location.reload();
     }, [3000]);
-    return () => clearInterval(interval);
+    return () => clearTimeout(interval);
   }, []);
 
   useEffect(() => {
