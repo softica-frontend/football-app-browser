@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { loadImages } from "../util/front/loadImages";
 import { imagesToLoad } from "../util/front/imagesToLoad";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,14 +24,22 @@ export default function Loading() {
   const dispatch = useDispatch();
   const username = localStorage.getItem("username");
   const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const FallbackNavigate = ({ to }) => {
-    const navigate = useNavigate();
     useEffect(() => {
       navigate(to);
-    }, [to, navigate]);
+    }, [to]);
     return null;
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      navigate(location.pathname, { replace: true });
+    }, [3000]);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
