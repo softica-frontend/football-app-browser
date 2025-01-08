@@ -1,0 +1,124 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@font-face {
+  font-family: "UEFAEuro-Bold";
+  src:
+    local("Turret Road"),
+    url("/fonts/UEFAEuro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "UEFAEuro-Heavy";
+  src:
+    local("Turret Road"),
+    url("/fonts/UEFAEuro-HeavyNarrow.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root {
+  font-family: "UEFAEuro-Bold";
+  line-height: 1.5;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1a5b00;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+nav,
+p {
+  font-family: "UEFAEuro-Bold";
+}
+
+h1{
+  font-family: "UEFAEuro-Heavy";
+}
+
+main {
+  background: linear-gradient(360deg, #37c100 17.43%, #1a5b00 124.33%);
+}
+
+.swiper-pagination-bullet {
+  background-color: white !important; /* Сірий колір для неактивної крапки */
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white !important; /* Білий колір для активної крапки */
+}
+
+#wallet-card {
+  background-image: url("/images/card-bg.png");
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#current-wallet {
+  background-image: url("/images/current-wallet.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+#mastercardvisa {
+  background-image: url("/images/mastercardvisa.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+#crypto-wallet {
+  background-image: url("/images/crypto-wallet.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+input {
+  background-color: transparent;
+}
+input:focus {
+  outline: none;
+}
+input::placeholder {
+  font-size: large;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(-200px);
+  }
+}
+
+#main-container-for-plus .floating-text {
+  position: absolute;
+  animation: floatUp 2.3s forwards;
+  pointer-events: none;
+}
+
+/* .ball-item {
+  will-change: opacity, transform;
+}
+.football-player {
+  will-change: opacity, transform;
+} */
