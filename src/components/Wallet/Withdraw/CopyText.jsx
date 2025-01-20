@@ -8,7 +8,7 @@ const CopyTextElement = ({ text, children }) => {
   return (
     <CopyToClipboard text={text}>
       <div
-        className="w-full rounded-[28px] flex py-[20px]  max-xsmall:py-[10px] px-4 justify-between items-center bg-[#FFFFFF66]"
+        className="w-full rounded-[28px] flex py-[10px]  max-xsmall:py-[6px] px-4 justify-between items-center bg-[#FFFFFF66]"
         onClick={() => {
           setIsCopied(true);
           setTimeout(() => {

